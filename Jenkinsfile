@@ -1,3 +1,4 @@
+node {
     stage 'Deploy Web App On CloudFoundry'
     wrap([$class: 'CloudFoundryCliBuildWrapper',
         cloudFoundryCliVersion: 'Cloud Foundry CLI (built-in)',
@@ -9,3 +10,4 @@
 
            sh 'cf push gameoflife-dev -p gameoflife-web/target/gameoflife.war'
     }
+}
