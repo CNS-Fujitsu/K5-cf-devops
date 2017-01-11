@@ -7,17 +7,18 @@ node {
 
     
     try {
-    stage 'Checkout'
+      stage 'Checkout'
+
           // Checkout scm
           sh 'git clone https://github.com/fujitsuk5/K5-cf-devops.git'
    
-    stage 'Build'
+      stage 'Build'
   
           // Execute build
 
           sh 'npm install'
 
-    stage 'Test'
+      stage 'Test'
 
           sh 'npm test'
         }
