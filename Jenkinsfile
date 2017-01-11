@@ -6,20 +6,23 @@ node {
     currentBuild.result = "SUCCESS"
 
     
-    try {
       stage 'Checkout'
 
+        try {
           // Checkout scm
           sh 'git clone https://github.com/fujitsuk5/K5-cf-devops.git'
-   
-      stage 'Build'
-  
-          // Execute build
+        }
 
+ 
+      stage 'Build'
+          try { 
+          // Execute build
           sh 'npm install'
+          }
 
       stage 'Test'
-
+        
+        try {
           sh 'npm test'
         }
 
