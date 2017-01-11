@@ -9,13 +9,13 @@ node {
     
     try {
           // Checkout scm
-          git clone https://github.com/fujitsuk5/K5-cf-devops.git
-          // Execute build
-          npm install 
+          sh 'git clone https://github.com/fujitsuk5/K5-cf-devops.git'
         }
    
     stage 'Build'
   
+          // Execute build
+
     try {
           sh 'npm install'
         }
