@@ -8,9 +8,9 @@ node {
     stage 'Checkout'
     
     try {
-          # Checkout scm
+          // Checkout scm
           git clone https://github.com/fujitsuk5/K5-cf-devops.git
-          # Execute build
+          // Execute build
           npm install 
         }
    
