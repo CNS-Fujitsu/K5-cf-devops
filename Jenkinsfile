@@ -5,9 +5,9 @@ node {
 
     currentBuild.result = "SUCCESS"
 
-    stage 'Checkout'
     
     try {
+    stage 'Checkout'
           // Checkout scm
           sh 'git clone https://github.com/fujitsuk5/K5-cf-devops.git'
    
