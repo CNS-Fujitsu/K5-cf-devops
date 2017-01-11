@@ -11,24 +11,31 @@ node {
         try {
           // Checkout scm
           sh 'git clone https://github.com/fujitsuk5/K5-cf-devops.git'
-        }
-
- 
-      stage 'Build'
-          try { 
-          // Execute build
-          sh 'npm install'
           }
 
+        catch (err) {
+          currentBuild.result = "SUCCESS"
+        }    
+ 
+      stage 'Build'
+        try { 
+          // Execute build
+          sh 'npm install'
+         }
+
+          catch (err) {
+            currentBuild.result = "SUCCESS"
+         }
+    
       stage 'Test'
         
         try {
           sh 'npm test'
         }
 
-    catch (err) {
-      currentBuild.result = "SUCCESS"
-    }    
+        catch (err) {
+          currentBuild.result = "SUCCESS"
+        }    
 
 }
 
